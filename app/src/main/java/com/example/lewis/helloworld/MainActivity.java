@@ -21,13 +21,12 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         setContentView(R.layout.activity_main);
 
         sensorManager.registerListener(this,compassSensor, SensorManager.SENSOR_DELAY_GAME);
-        sensorManager.registerListener(this,accelSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
     }
 
 
 
     SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-    Sensor accelSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     Sensor compassSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
 
     protected void onPause() {
@@ -47,19 +46,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         }
 
-    LocationManager locationManager = (LocationManager) this
-            .getSystemService(Context.LOCATION_SERVICE);
+    LocationManager locationManager = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
 
-    // Define a listener that responds to location updates
     LocationListener locationListener = new LocationListener() {
         public void onLocationChanged(Location location) {
             location.getLatitude();
-            Toast.makeText(Context, "Current speed:" + location.getSpeed(), Toast.LENGTH_SHORT).show();
 
         }
 
-        public void onStatusChanged(String provider, int status,
-                                    Bundle extras) {
+        public void onStatusChanged(String provider, int status, Bundle extras) {
         }
 
         public void onProviderEnabled(String provider) {
@@ -68,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         public void onProviderDisabled(String provider) {
         }
     };
-    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+
 
 }
 
