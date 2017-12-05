@@ -27,4 +27,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     // Google map Api
     implementation 'com.google.android.gms:play-services-maps:11.6.0'
+    // Google Locations Api
+    implementation 'com.google.android.gms:play-services-location:11.6.0'
 }
