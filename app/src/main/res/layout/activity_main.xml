@@ -9,10 +9,9 @@
     <TextView
         android:layout_width="99dp"
         android:layout_height="62dp"
-        android:layout_marginBottom="224dp"
+        android:layout_marginBottom="268dp"
         android:text="Android Project"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
@@ -22,5 +21,18 @@
         android:layout_height="wrap_content"
         android:onClick="viewMapActivity"
         android:text="To Map Activity" />
+
+    <Button
+        android:id="@+id/SpeedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginTop="0dp"
+        android:onClick="viewLocationActivity"
+        android:text="To Speed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 
 </android.support.constraint.ConstraintLayout>

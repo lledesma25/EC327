@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Hello World</string>
     <string name="title_activity_maps">Map</string>
+    <string name="inital_speed">0.0 m/s</string>
+    <string name="App_Name">Bike App</string>
+    <string name="Speed_Name">Speed</string>
 </resources>
