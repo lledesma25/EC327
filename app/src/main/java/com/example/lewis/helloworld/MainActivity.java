@@ -1,17 +1,19 @@
 package com.example.lewis.helloworld;
 
-
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-
-import android.content.pm.PackageManager;
-import android.os.Build;
-import android.support.v4.app.ActivityCompat;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.content.Context;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,14 +21,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        int permission_track = 1;
-        String[] permission = {Manifest.permission.ACCESS_FINE_LOCATION};
-
-        if(!hasPermissions(this, permission))
-        {
-            ActivityCompat.requestPermissions(this, permission, permission_track);
-        }
     }
 
     public void viewMapActivity(View v) {
@@ -34,22 +28,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(MapActivity);
     }
 
-    public void viewLocationActivity(View v) {
-        Intent LocationActivity = new Intent(this, LocationActivity.class);
-        startActivity(LocationActivity);
-    }
-
-    public static boolean hasPermissions(Context context, String[] permission)
-    {
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M && context != null && permission != null)
-        {
-            for(String permissions:permission) {
-                if (ActivityCompat.checkSelfPermission(context, permissions) != PackageManager.PERMISSION_GRANTED) {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
 
 }
