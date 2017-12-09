@@ -17,10 +17,11 @@
         app:layout_constraintRight_toRightOf="parent" />
 
     <Button
-        android:id="@+id/ToMapButton"
+        android:id="@+id/ToFindDistance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="viewMapActivity"
-        android:text="To Map Activity" />
+        android:text="To Map Activity"
+        tools:ignore="OnClick" />
 
 </android.support.constraint.ConstraintLayout>
