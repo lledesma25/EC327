@@ -1,12 +1,14 @@
 package com.example.lewis.helloworld;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -21,8 +23,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
-
+    public void viewMapActivity(View v) {
+        Intent MapActivity = new Intent(this, MapsActivity.class);
+        startActivity(MapActivity);
+    }
 
 
 }
