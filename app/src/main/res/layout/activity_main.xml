@@ -75,19 +75,37 @@
                     android:textColor="#FFFFFF"
                     android:textSize="25sp" />
 
-
+                <fragment
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/Compass_Fragment"
+                    android:name="com.example.lewis.helloworld.CompassActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/current_temperature_field"
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/background_light"
-                android:textSize="58sp" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/current_temperature_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="50sp" />
+
+                <fragment
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/Speed_Fragment"
+                    android:name="com.example.lewis.helloworld.LocationActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
 
 
 

@@ -1,5 +1,6 @@
 package com.example.lewis.helloworld;
 
+import android.app.Fragment;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
@@ -8,30 +9,41 @@ import android.hardware.SensorEvent;
 
 import android.hardware.SensorEventListener;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 
-public class CompassActivity extends AppCompatActivity implements SensorEventListener {
+import static android.content.Context.SENSOR_SERVICE;
+
+    public class CompassActivity extends Fragment implements SensorEventListener {
     // device sensor manager
     private SensorManager mSensor;
     private ImageView image;
     private float currentDegree = 0f;
 
-    protected void onCreate(Bundle savedInstanceState) {
+    public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
+        View layout = inflater.inflate( R.layout.activity_compass, container, false );
+
+        return layout;
+    }
+
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_compass);
-        mSensor = (SensorManager) getSystemService(SENSOR_SERVICE);
-        image = (ImageView) findViewById(R.id.imageViewCompass);
+        mSensor = (SensorManager) getActivity().getSystemService(SENSOR_SERVICE);
+        image = getActivity().findViewById(R.id.imageViewCompass);
     }
     @Override
-    protected void onPause() {
+    public void onPause() {
         super.onPause();
         // to stop the listener and save battery
         mSensor.unregisterListener(this);
     }
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
         // code for system's orientation sensor registered listeners
         mSensor.registerListener(this, mSensor.getDefaultSensor(Sensor.TYPE_ORIENTATION), SensorManager.SENSOR_DELAY_GAME);

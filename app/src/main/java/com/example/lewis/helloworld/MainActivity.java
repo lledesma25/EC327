@@ -22,7 +22,7 @@ import android.graphics.Typeface;
 import com.example.lewis.helloworld.WeatherActivity;
 import com.example.lewis.helloworld.CompassActivity;
 import com.example.lewis.helloworld.LocationActivity;
-
+import android.app.Fragment;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
@@ -53,36 +53,10 @@ public class MainActivity extends AppCompatActivity {
             init();
         }
 
-        final TextView cityField = findViewById(R.id.city_field);
-        final TextView updatedField = findViewById(R.id.updated_field);
-        final TextView detailsField = findViewById(R.id.details_field);
-        final TextView currentTemperatureField = findViewById(R.id.current_temperature_field);
-        final TextView humidity_field = findViewById(R.id.humidity_field);
-        final TextView pressure_field = findViewById(R.id.pressure_field);
-//        weatherIcon = (TextView)findViewById(R.id.weather_icon);
-//        weatherIcon.setTypeface(weatherFont);
-
-
-        WeatherActivity.placeIdTask asyncTask =new WeatherActivity.placeIdTask(new WeatherActivity.AsyncResponse() {
-            public void processFinish(String weather_city, String weather_description, String weather_temperature, String weather_humidity, String weather_pressure, String weather_updatedOn, String weather_iconText, String sun_rise) {
-
-                cityField.setText(weather_city);
-                updatedField.setText(weather_updatedOn);
-                detailsField.setText(weather_description);
-                currentTemperatureField.setText(weather_temperature);
-                humidity_field.setText("Humidity: "+weather_humidity);
-                pressure_field.setText("Pressure: "+weather_pressure);
-//                weatherIcon.setText(Html.fromHtml(weather_iconText));
-
-            }
-        });
-        asyncTask.execute("42.3497", "-71.1037"); //  asyncTask.execute("Latitude", "Longitude")
-
-
-    LocationActivity speed = new LocationActivity();
-
-
-
+        Fragment Compass_fragment = getFragmentManager().findFragmentById(R.id.Compass_Fragment);
+       // Fragment Speed_fragment = getFragmentManager().findFragmentById(R.id.Speed_Fragment);
+        Compass_fragment.onCreate(savedInstanceState);
+       // Speed_fragment.onCreate(savedInstanceState);
     }
 
     @Override

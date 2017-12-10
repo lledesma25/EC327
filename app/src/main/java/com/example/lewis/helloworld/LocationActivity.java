@@ -8,30 +8,36 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-public class LocationActivity extends AppCompatActivity implements LocationListener {
+public class LocationActivity extends Fragment implements LocationListener {
 
 
-    protected void onCreate(Bundle savedInstanceState) {
+    public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
+        View layout = inflater.inflate( R.layout.activity_location, container, false );
+
+        return layout;
+    }
+
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        LocationManager mLocation = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+        LocationManager mLocation = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
         mLocation.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
-        this.onLocationChanged(null);
-
-
 
     }
 
     @Override
     public void onLocationChanged(Location location)
     {
-        TextView txt = (TextView) this.findViewById(R.id.Speed);
+        TextView txt = (TextView) getActivity().findViewById(R.id.textView);
 
         if(location == null)
         {
