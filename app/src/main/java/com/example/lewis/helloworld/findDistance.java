@@ -37,7 +37,7 @@ public class findDistance extends AppCompatActivity implements OnMapReadyCallbac
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+        protected void onCreate(Bundle savedInstanceState) {
         getLocationPermission();
         if (mLocationPermissionsGranted) {
             getDeviceLocation();
