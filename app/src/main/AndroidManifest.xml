@@ -48,6 +48,9 @@
             android:name=".LocationActivity"
             android:label="@string/title_activity_Speed" />
         <activity
+            android:name=".CompassActivity"
+            android:label="@string/title_activity_Compass" />
+        <activity
             android:name=".findDistance"
             android:label="@string/title_activity_find_distance"
             android:theme="@style/AppTheme.NoActionBar"></activity>

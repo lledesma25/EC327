@@ -96,4 +96,9 @@ public class MainActivity extends AppCompatActivity {
         Intent viewLoc = new Intent(MainActivity.this, LocationActivity.class);
         startActivity(viewLoc);
     }
+
+    public void viewCompassActivity(View view) {
+        Intent viewCompass = new Intent(MainActivity.this, CompassActivity.class);
+        startActivity(viewCompass);
+    }
 }

@@ -4,4 +4,5 @@
     <string name="inital_speed">0.0m/s</string>
     <string name="title_activity_find_distance">Find Distance</string>
     <string name="title_activity_Speed">Speed</string>
+    <string name="title_activity_Compass">Compass</string>
 </resources>

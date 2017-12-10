@@ -27,10 +27,19 @@
         android:id="@+id/SpeedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginEnd="24dp"
         android:onClick="viewLocationActivity"
         android:text="To Speed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/CompassButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="132dp"
+        android:onClick="viewCompassActivity"
+        android:text="To Compass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
