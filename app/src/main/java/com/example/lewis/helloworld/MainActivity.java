@@ -9,7 +9,10 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
+
 import android.support.v4.app.FragmentActivity;
+
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +32,11 @@ import com.google.android.gms.common.GoogleApiAvailability;
 
 import java.util.function.Function;
 
-public class MainActivity extends FragmentActivity {
+
+
+
+public class MainActivity extends AppCompatActivity {
+
 
 
     private static final String TAG = "MainActivity";
@@ -112,6 +119,7 @@ public class MainActivity extends FragmentActivity {
 
             }
         });
+
         asyncTask.execute("42.3497", "-71.1037");
 
 
