@@ -96,8 +96,8 @@ public class findDistance extends Fragment implements OnMapReadyCallback {
                             Location currentLocation = (Location) task.getResult();
                             Log.d(TAG, "Device Location: " + currentLocation);
 
-                            lat.setText(String.valueOf("Latitude: " + currentLocation.getLatitude()));
-                            lon.setText(String.valueOf("Longitude: " + currentLocation.getLongitude()));
+                          //   lat.setText(String.valueOf("Latitude: " + currentLocation.getLatitude()));
+                          //  lon.setText(String.valueOf("Longitude: " + currentLocation.getLongitude()));
 
 //                            moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()),
 //                                    DEFAULT_ZOOM);

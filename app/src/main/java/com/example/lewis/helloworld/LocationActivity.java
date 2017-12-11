@@ -43,13 +43,11 @@ public class LocationActivity extends Fragment implements LocationListener {
     public void onLocationChanged(Location location)
     {
 
-            if(location != null)
-            {
 
                 float speed = (float) (location.getSpeed()*2.23694);
                 String out = Float.toString(speed) + " MPH";
                 txt.setText(out);
-            }
+
 
 
 

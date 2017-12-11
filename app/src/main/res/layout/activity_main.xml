@@ -77,12 +77,11 @@
                     android:textColor="#FFFFFF"
                     android:textSize="25sp" />
 
-                <fragment
-                    xmlns:android="http://schemas.android.com/apk/res/android"
+                <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/Compass_Fragment"
                     android:name="com.example.lewis.helloworld.CompassActivity"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent" />
 
             </LinearLayout>
 
@@ -104,7 +103,7 @@
                     android:id="@+id/Speed_Fragment"
                     android:name="com.example.lewis.helloworld.LocationActivity"
                     android:layout_width="match_parent"
-                    android:layout_height="308dp" />
+                    android:layout_height="482dp" />
 
 
 
@@ -115,12 +114,4 @@
 
     </LinearLayout>
 
-    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/User_location"
-        android:name="com.example.lewis.helloworld.findDistance"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="428dp" />
 </RelativeLayout>
