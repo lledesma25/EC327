@@ -29,6 +29,7 @@ public class WeatherActivity{
 
     private static final String OPEN_WEATHER_MAP_API = "32007573d8cf884ad7483c0879a4147f";
 
+    // set the weather icon depending on the weather.
     public static String setWeatherIcon(int actualId, long sunrise, long sunset){
         int id = actualId / 100;
         String icon = "";
@@ -89,6 +90,7 @@ public class WeatherActivity{
             return jsonWeather;
         }
 
+        // parse the JSON file and extract weather information
         @Override
         protected void onPostExecute(JSONObject json) {
             try {
@@ -124,7 +126,7 @@ public class WeatherActivity{
 
 
 
-
+    // get the weather information as a JSON file.
     public static JSONObject getWeatherJSON(String lat, String lon){
         try {
             URL url = new URL(String.format(OPEN_WEATHER_MAP_URL, lat, lon));
