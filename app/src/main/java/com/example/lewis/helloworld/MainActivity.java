@@ -53,13 +53,14 @@ public class MainActivity extends AppCompatActivity {
         if(isServicesOK()){
             init();
         }
-
+        // set the compass fragment
         Fragment Compass_fragment = getFragmentManager().findFragmentById(R.id.Compass_Fragment);
        // Fragment Speed_fragment = getFragmentManager().findFragmentById(R.id.Speed_Fragment);
         Compass_fragment.onCreate(savedInstanceState);
        // Speed_fragment.onCreate(savedInstanceState);
     }
 
+    // set the weather layout
     @Override
     public void onResume() {
         super.onResume();
