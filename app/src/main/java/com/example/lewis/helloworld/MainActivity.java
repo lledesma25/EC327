@@ -54,9 +54,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Fragment Compass_fragment = getFragmentManager().findFragmentById(R.id.Compass_Fragment);
-       // Fragment Speed_fragment = getFragmentManager().findFragmentById(R.id.Speed_Fragment);
+        Fragment Speed_fragment = getFragmentManager().findFragmentById(R.id.Speed_Fragment);
+        Fragment Location = getFragmentManager().findFragmentById(R.id.User_location);
+        Speed_fragment.onCreate(savedInstanceState);
         Compass_fragment.onCreate(savedInstanceState);
-       // Speed_fragment.onCreate(savedInstanceState);
+        Location.onCreate(savedInstanceState);
+
     }
 
     @Override
