@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, permissions, permission_track);
         }
 
+        // check if service is ok
         if(isServicesOK()){
             init();
         }
@@ -98,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // check that the Google play service in the device has the correct version; if not show user on how to update.
+    // if all fails, notify the users that they can't make requests.
     public boolean isServicesOK(){
         Log.d(TAG, "isServicesOK: checking google services version");
 
@@ -119,6 +122,9 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
+
+    // check if context has its permissions granted
+    // return true if the Contex's permissions are granted. Return false otherwise.
     public static boolean hasPermissions(Context context, String[] permissions)
     {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null)

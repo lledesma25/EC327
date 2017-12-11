@@ -75,14 +75,33 @@
                     android:textColor="#FFFFFF"
                     android:textSize="25sp" />
 
-                <fragment
-                    xmlns:android="http://schemas.android.com/apk/res/android"
+                <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/Compass_Fragment"
                     android:name="com.example.lewis.helloworld.CompassActivity"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent" />
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/lat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="lat"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="204dp"
+                tools:layout_editor_absoluteY="56dp" />
+
+            <TextView
+                android:id="@+id/lon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="lon"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="74dp"
+                tools:layout_editor_absoluteY="56dp" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -98,15 +117,13 @@
                     android:textColor="@android:color/background_light"
                     android:textSize="50sp" />
 
-                <fragment
-                    xmlns:android="http://schemas.android.com/apk/res/android"
+                <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/Speed_Fragment"
                     android:name="com.example.lewis.helloworld.LocationActivity"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent" />
 
             </LinearLayout>
-
 
 
         </LinearLayout>

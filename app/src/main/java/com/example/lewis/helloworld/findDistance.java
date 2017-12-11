@@ -56,16 +56,20 @@ public class findDistance extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
     }
-
+    // get the device's location using the Google Maps API and pass it to a TextView
     private void getDeviceLocation() {
         Log.d(TAG, "getDeviceLocation: getting the devices current location");
 
+        // mFusedLocationProviderClient is provided by the Google Maps API to fetch location
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
         try {
+            // if it has permissions, proceed with fetching the device location.
             if (mLocationPermissionsGranted) {
 
+                // make a Task to fetch location
                 final Task location = mFusedLocationProviderClient.getLastLocation();
+                // make a Listener to wait for result. if successful, pass location to TextView
                 location.addOnCompleteListener(new OnCompleteListener() {
                     @Override
                     public void onComplete(@NonNull Task task) {
@@ -74,9 +78,7 @@ public class findDistance extends AppCompatActivity implements OnMapReadyCallbac
                             Location currentLocation = (Location) task.getResult();
                             Log.d(TAG, "Device Location: " + currentLocation);
 
-//                            moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()),
-//                                    DEFAULT_ZOOM);
-
+                        // else notify user about failure
                         } else {
                             Log.d(TAG, "onComplete: current location is null");
                             Toast.makeText(findDistance.this, "unable to get current location", Toast.LENGTH_SHORT).show();
@@ -89,6 +91,7 @@ public class findDistance extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
+    // get user permission for getting device location.
     private void getLocationPermission() {
         Log.d(TAG, "getLocationPermission: getting location permissions");
         String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION,
@@ -111,6 +114,8 @@ public class findDistance extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
+    // implementation of onRequestPermissionsResult from the OnMapReadyCallback interface
+    // get permission results on request to get location
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         Log.d(TAG, "onRequestPermissionsResult: called.");
