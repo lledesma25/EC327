@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     // check if context has its permissions granted
-    // return true if the Contex's permissions are granted. Return false otherwise.
+    // return true if the Context's permissions are granted. Return false otherwise.
     public static boolean hasPermissions(Context context, String[] permissions)
     {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null)
